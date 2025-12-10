@@ -144,24 +144,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 const contentElement = pdfContainer.firstElementChild;
                 
                 // Small delay to ensure rendering is complete
-                await new Promise(resolve => setTimeout(resolve, 200));
+                await new Promise(resolve => setTimeout(resolve, 300));
 
-                // Generate PDF
+                // Generate PDF with mobile-optimized settings
                 const opt = {
                     margin: [3, 3, 3, 3],
                     filename: `NLT_${pageTitle.replace(/\s+/g, '_')}_${today}.pdf`,
-                    image: { type: 'jpeg', quality: 0.95 },
+                    image: { type: 'jpeg', quality: 0.9 },
                     html2canvas: { 
                         scale: 2,
                         useCORS: true,
                         allowTaint: true,
-                        logging: false
+                        logging: false,
+                        windowWidth: 1200,
+                        windowHeight: 1000,
+                        scrollY: 0,
+                        scrollX: 0
                     },
                     jsPDF: { 
                         unit: 'mm', 
                         format: 'a4', 
-                        orientation: 'landscape'
-                    }
+                        orientation: 'landscape',
+                        compress: true
+                    },
+                    pagebreak: { mode: 'avoid-all' }
                 };
 
                 html2pdf().set(opt).from(contentElement).save().then(() => {
