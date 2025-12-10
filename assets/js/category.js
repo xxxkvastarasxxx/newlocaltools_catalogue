@@ -170,13 +170,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     pagebreak: { mode: 'avoid-all' }
                 };
 
-                html2pdf().set(opt).from(contentElement).save().then(() => {
-                    // Remove temporary element after PDF is saved
-                    if (document.body.contains(pdfContainer)) {
-                        document.body.removeChild(pdfContainer);
-                    }
-                    downloadBtn.innerHTML = originalContent;
-                    downloadBtn.disabled = false;
+                html2pdf().set(opt).from(contentElement).outputPdf('blob').then((blob) => {
+                    // Create download link that works better on mobile
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `NLT_${pageTitle.replace(/\s+/g, '_')}_${today}.pdf`;
+                    link.style.display = 'none';
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    
+                    // Clean up
+                    setTimeout(() => {
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(url);
+                        if (document.body.contains(pdfContainer)) {
+                            document.body.removeChild(pdfContainer);
+                        }
+                        downloadBtn.innerHTML = originalContent;
+                        downloadBtn.disabled = false;
+                    }, 100);
                 }).catch(err => {
                     console.error('PDF save error:', err);
                     if (document.body.contains(pdfContainer)) {
