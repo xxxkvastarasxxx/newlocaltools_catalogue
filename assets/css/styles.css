@@ -1,0 +1,855 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Brand Colors - inspired by New Local Tools */
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e67e22;
+    --success-color: #27ae60;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --border-color: #dee2e6;
+    
+    /* Brand Badge Colors */
+    --dewalt-color: #ffd400;
+    --makita-color: #00a9e0;
+    --milwaukee-color: #dc291e;
+    --einhell-color: #e30613;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header */
+.header {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.btn-main-site {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-main-site:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+}
+
+/* Filters Section */
+.filters {
+    background-color: var(--bg-white);
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.filter-info {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.filter-info strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.filter-select {
+    padding: 0.625rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--bg-white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.filter-select:hover {
+    border-color: var(--secondary-color);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Catalogue Section */
+.catalogue {
+    padding: var(--spacing-xl) 0;
+}
+
+/* Comparison Table Section */
+.comparison-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-white);
+}
+
+.comparison-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.comparison-header h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.875rem 1.75rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-download:hover:not(:disabled) {
+    background-color: var(--success-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-download:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+.btn-download svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Category Navigation */
+.category-nav {
+    background-color: var(--bg-white);
+    border-bottom: 3px solid var(--dewalt-color);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 70px;
+    z-index: 99;
+}
+
+.category-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dewalt-color) #f0f0f0;
+}
+
+.category-menu::-webkit-scrollbar {
+    height: 4px;
+}
+
+.category-menu::-webkit-scrollbar-thumb {
+    background: var(--dewalt-color);
+    border-radius: 2px;
+}
+
+.category-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.category-link:hover {
+    background: linear-gradient(to bottom, #f8f9fa, #fff);
+    color: var(--secondary-color);
+}
+
+.category-link.active {
+    background: linear-gradient(to bottom, #fffbf0, #fff);
+    color: var(--primary-color);
+    border-bottom-color: var(--dewalt-color);
+    font-weight: 600;
+}
+
+/* Category Sections */
+.category-section {
+    padding: 4rem 0;
+    border-bottom: 2px solid #e0e0e0;
+    scroll-margin-top: 120px;
+}
+
+.category-section:last-of-type {
+    border-bottom: none;
+}
+
+.category-header {
+    margin-bottom: 3rem;
+}
+
+.category-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+.category-count {
+    background: var(--dewalt-color);
+    color: var(--primary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.category-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Coming Soon Placeholder */
+.coming-soon-placeholder {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.coming-soon-placeholder p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin: 0;
+    font-weight: 500;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1200px;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.comparison-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.comparison-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: var(--bg-light);
+}
+
+.comparison-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.model-cell {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.model-cell strong {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.model-subtitle {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.image-cell {
+    text-align: center;
+}
+
+.image-cell img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.price-cell {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    white-space: nowrap;
+}
+
+.highlight-cell {
+    background-color: rgba(255, 212, 0, 0.1);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.features-cell {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    max-width: 250px;
+}
+
+.table-footer {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--border-color);
+}
+
+.table-footer p {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.table-footer strong {
+    color: var(--primary-color);
+}
+
+/* PDF-specific styles */
+@media print {
+    .comparison-header,
+    .btn-download,
+    .header,
+    .filters,
+    .catalogue,
+    .footer {
+        display: none !important;
+    }
+    
+    .comparison-section {
+        padding: 0;
+    }
+    
+    .comparison-table-wrapper {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .comparison-table {
+        page-break-inside: avoid;
+    }
+    
+    .comparison-table tbody tr {
+        page-break-inside: avoid;
+    }
+}
+
+.product-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.product-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(to right, var(--bg-light), var(--bg-white));
+}
+
+.product-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto var(--spacing-md);
+    text-align: center;
+    background-color: var(--bg-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-top: var(--spacing-sm);
+}
+
+.price-note {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.brand-badge {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.5px;
+}
+
+.brand-badge.dewalt {
+    background-color: var(--dewalt-color);
+    color: #000;
+}
+
+.brand-badge.makita {
+    background-color: var(--makita-color);
+    color: white;
+}
+
+.brand-badge.milwaukee {
+    background-color: var(--milwaukee-color);
+    color: white;
+}
+
+.brand-badge.einhell {
+    background-color: var(--einhell-color);
+    color: white;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.specs-table {
+    padding: var(--spacing-lg);
+}
+
+.specs-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs-table thead {
+    background-color: var(--bg-light);
+}
+
+.specs-table th {
+    text-align: left;
+    padding: 0.875rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+.specs-table td {
+    padding: 0.875rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.specs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.specs-table tbody tr:hover {
+    background-color: var(--bg-light);
+}
+
+.specs-table td:first-child {
+    font-weight: 600;
+    color: var(--text-dark);
+    width: 40%;
+}
+
+.specs-table td:last-child {
+    color: var(--text-light);
+}
+
+.product-footer {
+    padding: var(--spacing-lg);
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.btn-view {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-view:hover {
+    background-color: var(--success-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-section h4 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.footer-section p {
+    margin-bottom: var(--spacing-xs);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--dewalt-color);
+}
+
+.footer-note {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .category-nav {
+        top: 0;
+    }
+
+    .category-menu {
+        flex-direction: column;
+    }
+
+    .category-link {
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 3px solid transparent;
+    }
+
+    .category-link.active {
+        border-left-color: var(--dewalt-color);
+        border-bottom-color: #e0e0e0;
+    }
+
+    .category-section {
+        padding: 2rem 0;
+        scroll-margin-top: 0;
+    }
+
+    .category-title-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.75rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+    
+    .comparison-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .comparison-header h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .comparison-table-wrapper {
+        padding: var(--spacing-sm);
+        border-radius: var(--radius-sm);
+    }
+    
+    .comparison-table {
+        font-size: 0.8rem;
+        min-width: 900px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.625rem;
+    }
+    
+    .image-cell img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .model-cell strong {
+        font-size: 1rem;
+    }
+    
+    .price-cell {
+        font-size: 1rem;
+    }
+    
+    .product-title {
+        font-size: 1.25rem;
+    }
+    
+    .specs-table {
+        overflow-x: auto;
+    }
+    
+    .specs-table table {
+        font-size: 0.875rem;
+    }
+    
+    .specs-table td:first-child {
+        width: 50%;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .specs-table th,
+    .specs-table td {
+        padding: 0.625rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .filters,
+    .footer,
+    .btn-view,
+    .btn-main-site {
+        display: none;
+    }
+    
+    .product-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+    }
+}
