@@ -120,30 +120,99 @@ body {
 }
 
 .comparison-table thead {
-    background: var(--secondary-color);
+    background: #333;
     color: white;
 }
 
 .comparison-table th {
-    padding: 1rem;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid #555;
+    vertical-align: middle;
+}
+
+.comparison-table th.spec-column {
+    background: #222;
     text-align: left;
+    padding-left: 1rem;
+}
+
+.model-row {
+    background-color: var(--secondary-color) !important;
+    color: white;
+}
+
+.model-row td {
     font-weight: 700;
     font-size: 0.95rem;
-    white-space: nowrap;
+    padding: 0.75rem 0.5rem !important;
+    background-color: var(--secondary-color) !important;
+    color: white;
+}
+
+.model-row .spec-label {
+    background-color: var(--secondary-color) !important;
+    color: white !important;
 }
 
 .comparison-table tbody tr {
-    border-bottom: 1px solid #e0e0e0;
-    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #ddd;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
 }
 
 .comparison-table tbody tr:hover {
     background-color: rgba(37, 87, 204, 0.05);
 }
 
+.comparison-table tbody tr:first-child:hover {
+    background-color: transparent;
+}
+
+.comparison-table tbody tr:first-child .image-cell:hover {
+    background-color: transparent;
+}
+
 .comparison-table td {
-    padding: 1rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.spec-label {
+    background-color: #e9ecef;
+    font-weight: 600;
+    text-align: left !important;
+    padding-left: 1rem !important;
+    color: #333;
+}
+
+.image-cell {
+    text-align: center;
+    padding: 1rem 0.5rem !important;
+}
+
+.image-cell img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.logo-cell {
+    vertical-align: middle !important;
+    text-align: center !important;
+    padding: 1rem !important;
+}
+
+.table-logo {
+    max-width: 60px;
+    height: auto;
 }
 
 .model-cell strong {
@@ -156,17 +225,6 @@ body {
 .model-cell small {
     color: #666;
     font-size: 0.85rem;
-}
-
-.image-cell {
-    text-align: center;
-}
-
-.image-cell img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    border-radius: 8px;
 }
 
 .price-cell {
@@ -222,5 +280,64 @@ body {
     .image-cell img {
         width: 60px;
         height: 60px;
+    }
+}
+
+/* Specifications Explanation Section */
+.specs-explanation {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.specs-explanation h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.explanation-item {
+    margin-bottom: 1.5rem;
+}
+
+.explanation-item:last-child {
+    margin-bottom: 0;
+}
+
+.explanation-item h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.explanation-item p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .specs-explanation {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .specs-explanation h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .explanation-item h4 {
+        font-size: 1.1rem;
+    }
+
+    .explanation-item p {
+        font-size: 0.9rem;
+        padding-left: 0.5rem;
     }
 }
