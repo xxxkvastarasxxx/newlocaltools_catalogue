@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="../../assets/css/category.css">
 </head>
 <body>
@@ -15,7 +17,7 @@
             <a href="../../index.html" class="back-btn">← Back to Categories</a>
             <div class="page-title">
                 <h1>Cordless Impact Wrenches</h1>
-                <p>8 Models Available</p>
+                <p>10 Models Available</p>
             </div>
         </div>
     </header>
@@ -23,21 +25,214 @@
     <main class="page-content">
         <div class="container">
             <div class="comparison-header">
-                <h2>Impact Wrenches Comparison</h2>
-                <button class="btn-download" disabled>
+                <h2>DeWalt Impact Wrenches Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
-                    Coming Soon
+                    Download PDF
                 </button>
             </div>
 
-            <div style="background: white; border-radius: 12px; padding: 4rem 2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <p style="font-size: 1.2rem; color: #6c757d;">Comparison table will be added soon</p>
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF923N.png" alt="DCF923N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF922N.png" alt="DCF922N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF899N.png" alt="DCF899N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF897N.png" alt="DCF897N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF900N.png" alt="DCF900N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF921N.png" alt="DCF921N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF891N.png" alt="DCF891N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF964N.png" alt="DCF964N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF892N.png" alt="DCF892N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/impact-wrenches/DCF961N.png" alt="DCF961N" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>DCF923N</strong></td>
+                            <td><strong>DCF922N</strong></td>
+                            <td><strong>DCF899N</strong></td>
+                            <td><strong>DCF897N</strong></td>
+                            <td><strong>DCF900N</strong></td>
+                            <td><strong>DCF921N</strong></td>
+                            <td><strong>DCF891N</strong></td>
+                            <td><strong>DCF964N</strong></td>
+                            <td><strong>DCF892N</strong></td>
+                            <td><strong>DCF961N</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Compact 3/8</td>
+                            <td>Compact 1/2</td>
+                            <td>High Torque 1/2</td>
+                            <td>High Torque 3/4</td>
+                            <td>High Torque 1/2</td>
+                            <td>Compact 1/2</td>
+                            <td>Compact 1/2</td>
+                            <td>Most Powerful 3/4</td>
+                            <td>Compact 1/2</td>
+                            <td>High Torque 1/2</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Drive Size (In)</td>
+                            <td>3/8</td>
+                            <td>1/2</td>
+                            <td>1/2</td>
+                            <td>3/4</td>
+                            <td>1/2</td>
+                            <td>1/2</td>
+                            <td>1/2</td>
+                            <td>3/4</td>
+                            <td>1/2</td>
+                            <td>1/2</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Modes</td>
+                            <td>4 modes</td>
+                            <td>4 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>4 modes</td>
+                            <td>4 modes</td>
+                            <td>4 modes</td>
+                            <td>4 modes</td>
+                            <td>4 modes</td>
+                            <td>4 modes</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Torque (Nm)</td>
+                            <td>610</td>
+                            <td>610</td>
+                            <td>950</td>
+                            <td>950</td>
+                            <td>1898</td>
+                            <td>610</td>
+                            <td>1084</td>
+                            <td>2576</td>
+                            <td>1084</td>
+                            <td>2372</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Revolutions Per Minute (RPM)</td>
+                            <td>0-2500</td>
+                            <td>0-400/1500</td>
+                            <td>0-400/1200/1900</td>
+                            <td>0-400/1200/1900</td>
+                            <td>0-2300</td>
+                            <td>0-2500</td>
+                            <td>0-2000</td>
+                            <td>0-440/575/1200</td>
+                            <td>0-2000</td>
+                            <td>0-440/800/1200</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Impacts Per Minute (IPM)</td>
+                            <td>0-3350</td>
+                            <td>0-3550</td>
+                            <td>0-2400</td>
+                            <td>0-2400</td>
+                            <td>0-2200</td>
+                            <td>0-3550</td>
+                            <td>0-3250</td>
+                            <td>0-2015</td>
+                            <td>0-3250</td>
+                            <td>0-1890</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>126</td>
+                            <td>125</td>
+                            <td>224</td>
+                            <td>224</td>
+                            <td>223</td>
+                            <td>125</td>
+                            <td>175</td>
+                            <td>223</td>
+                            <td>213</td>
+                            <td>213</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>1.1</td>
+                            <td>0.9</td>
+                            <td>2.62</td>
+                            <td>2.6</td>
+                            <td>2.9</td>
+                            <td>1.1</td>
+                            <td>1.67</td>
+                            <td>3.7</td>
+                            <td>1.61</td>
+                            <td>3.5</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">LED Light</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Impact Wrench Specifications</h3>
+                
+                <div class="explanation-item">
+                    <h4>RPM (Revolutions Per Minute)</h4>
+                    <p>Measures how fast the tool's motor spins. Higher RPM means faster drilling and driving speeds, ideal for quickly driving screws into softer materials. Variable speed settings allow you to match the speed to your specific task.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>IPM (Impacts Per Minute)</h4>
+                    <p>Indicates the number of concussive blows the tool delivers per minute. Higher IPM provides more driving power for tougher applications like driving long screws into hardwood or fastening through dense materials.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Torque (Nm)</h4>
+                    <p>Represents the twisting force the tool can apply. Measured in Newton meters (Nm), higher torque allows you to drive larger fasteners and work with harder materials. Essential for heavy-duty applications and professional use.</p>
+                </div>
             </div>
         </div>
     </main>
+
+    <script src="../../assets/js/category.js"></script>
 </body>
 </html>

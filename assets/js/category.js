@@ -33,172 +33,56 @@ document.addEventListener('DOMContentLoaded', function() {
             this.disabled = true;
 
             try {
-                // Get the original table
-                const originalTable = document.querySelector('#comparisonTable table');
+                // Capture the table as screenshot and fit to A4 landscape
+                const tableWrapper = document.querySelector('#comparisonTable');
                 
-                // Convert all visible images to base64 using canvas
-                const imageMap = new Map();
-                const imageElements = originalTable.querySelectorAll('.image-cell img');
-                
-                imageElements.forEach(img => {
-                    if (img.complete && img.naturalWidth > 0) {
-                        const base64 = imageToBase64(img);
-                        if (base64) {
-                            imageMap.set(img.src, base64);
-                        }
-                    }
+                // Capture table as canvas
+                const canvas = await html2canvas(tableWrapper, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
                 });
                 
-                // Build HTML string for PDF
-                let tableRows = '';
-                const tbody = originalTable.querySelector('tbody');
-                if (tbody) {
-                    tbody.querySelectorAll('tr').forEach(row => {
-                        let cells = '';
-                        row.querySelectorAll('td').forEach((cell, idx) => {
-                            let content = '';
-                            let style = 'padding:3px 2px;border:1px solid #dee2e6;font-size:8px;vertical-align:middle;';
-                            
-                            if (idx === 0) { // Model
-                                const strong = cell.querySelector('strong');
-                                const small = cell.querySelector('small');
-                                content = `<strong style="font-size:9px;">${strong ? strong.textContent : ''}</strong><br><span style="font-size:7px;color:#666;">${small ? small.textContent : ''}</span>`;
-                                style += 'width:11%;';
-                            } else if (idx === 1) { // Image
-                                const img = cell.querySelector('img');
-                                if (img) {
-                                    const base64Src = imageMap.get(img.src);
-                                    if (base64Src) {
-                                        content = `<img src="${base64Src}" style="width:32px;height:32px;object-fit:contain;">`;
-                                    } else {
-                                        content = `<div style="width:32px;height:32px;background:#f0f0f0;"></div>`;
-                                    }
-                                }
-                                style += 'width:7%;text-align:center;';
-                            } else if (idx === 2) { // Price
-                                content = cell.textContent.trim();
-                                style += 'width:7%;font-weight:700;color:#2557cc;';
-                            } else if (idx === 3) { // Torque
-                                content = cell.textContent.trim();
-                                style += 'width:7%;';
-                                if (cell.classList.contains('highlight-cell')) {
-                                    style += 'background:#fff9e6;color:#d35400;font-weight:700;';
-                                }
-                            } else if (idx === 4) { // Length
-                                content = cell.textContent.trim();
-                                style += 'width:6%;';
-                            } else if (idx === 5) { // Weight
-                                content = cell.textContent.trim();
-                                style += 'width:6%;';
-                            } else if (idx === 6) { // Speed
-                                content = cell.textContent.trim();
-                                style += 'width:9%;';
-                            } else if (idx === 7) { // Impact
-                                content = cell.textContent.trim();
-                                style += 'width:9%;';
-                            } else if (idx === 8) { // Features
-                                content = cell.textContent.trim();
-                                style += 'width:38%;font-size:7px;';
-                            }
-                            
-                            cells += `<td style="${style}">${content}</td>`;
-                        });
-                        tableRows += `<tr>${cells}</tr>`;
-                    });
+                const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                
+                // A4 landscape: 297mm x 210mm
+                const pageWidth = 297;
+                const pageHeight = 210;
+                const margin = 5;
+                
+                // Calculate dimensions to fit on page
+                const imgWidth = canvas.width;
+                const imgHeight = canvas.height;
+                const imgRatio = imgWidth / imgHeight;
+                
+                const maxWidth = pageWidth - (margin * 2);
+                const maxHeight = pageHeight - (margin * 2);
+                
+                let finalWidth, finalHeight;
+                
+                if (imgRatio > (maxWidth / maxHeight)) {
+                    // Image is wider - fit to width
+                    finalWidth = maxWidth;
+                    finalHeight = maxWidth / imgRatio;
+                } else {
+                    // Image is taller - fit to height
+                    finalHeight = maxHeight;
+                    finalWidth = maxHeight * imgRatio;
                 }
-
-                const pdfHTML = `
-                    <div style="background:white;padding:3px 8px;font-family:Arial,sans-serif;width:1050px;">
-                        <div style="text-align:center;margin-bottom:3px;">
-                            <h1 style="color:#2557cc;margin:0 0 1px 0;font-size:15px;font-weight:700;">New Local Tools</h1>
-                            <h2 style="color:#2c3e50;margin:0 0 1px 0;font-size:10px;font-weight:600;">${pageTitle} - Complete Comparison</h2>
-                            <p style="color:#666;margin:0 0 2px 0;font-size:7px;">Generated on ${new Date().toLocaleDateString('en-GB')} | newlocaltools.uk</p>
-                        </div>
-                        <table style="width:100%;border-collapse:collapse;table-layout:fixed;">
-                            <thead>
-                                <tr>
-                                    <th style="width:11%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Model</th>
-                                    <th style="width:7%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Image</th>
-                                    <th style="width:7%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Price</th>
-                                    <th style="width:7%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Max Torque</th>
-                                    <th style="width:6%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Length</th>
-                                    <th style="width:6%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Weight</th>
-                                    <th style="width:9%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Speed Range</th>
-                                    <th style="width:9%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Impact Rate</th>
-                                    <th style="width:38%;padding:4px 2px;background:#2557cc;color:white;font-size:8px;border:1px solid #1a4299;font-weight:600;">Key Features</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${tableRows}
-                            </tbody>
-                        </table>
-                    </div>
-                `;
-
-                // Create temporary container - hidden off-screen
-                const pdfContainer = document.createElement('div');
-                pdfContainer.innerHTML = pdfHTML;
-                pdfContainer.style.cssText = 'position:absolute;left:-9999px;top:0;background:white;';
-                document.body.appendChild(pdfContainer);
                 
-                const contentElement = pdfContainer.firstElementChild;
+                // Center on page
+                const x = (pageWidth - finalWidth) / 2;
+                const y = (pageHeight - finalHeight) / 2;
                 
-                // Small delay to ensure rendering is complete
-                await new Promise(resolve => setTimeout(resolve, 300));
-
-                // Generate PDF with mobile-optimized settings
-                const opt = {
-                    margin: [3, 3, 3, 3],
-                    filename: `NLT_${pageTitle.replace(/\s+/g, '_')}_${today}.pdf`,
-                    image: { type: 'jpeg', quality: 0.9 },
-                    html2canvas: { 
-                        scale: 2,
-                        useCORS: true,
-                        allowTaint: true,
-                        logging: false,
-                        windowWidth: 1200,
-                        windowHeight: 1000,
-                        scrollY: 0,
-                        scrollX: 0
-                    },
-                    jsPDF: { 
-                        unit: 'mm', 
-                        format: 'a4', 
-                        orientation: 'landscape',
-                        compress: true
-                    },
-                    pagebreak: { mode: 'avoid-all' }
-                };
-
-                html2pdf().set(opt).from(contentElement).outputPdf('blob').then((blob) => {
-                    // Create download link that works better on mobile
-                    const url = URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = `NLT_${pageTitle.replace(/\s+/g, '_')}_${today}.pdf`;
-                    link.style.display = 'none';
-                    
-                    document.body.appendChild(link);
-                    link.click();
-                    
-                    // Clean up
-                    setTimeout(() => {
-                        document.body.removeChild(link);
-                        URL.revokeObjectURL(url);
-                        if (document.body.contains(pdfContainer)) {
-                            document.body.removeChild(pdfContainer);
-                        }
-                        downloadBtn.innerHTML = originalContent;
-                        downloadBtn.disabled = false;
-                    }, 100);
-                }).catch(err => {
-                    console.error('PDF save error:', err);
-                    if (document.body.contains(pdfContainer)) {
-                        document.body.removeChild(pdfContainer);
-                    }
-                    downloadBtn.innerHTML = originalContent;
-                    downloadBtn.disabled = false;
-                });
+                // Create PDF
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('landscape', 'mm', 'a4');
+                pdf.addImage(imgData, 'JPEG', x, y, finalWidth, finalHeight);
+                pdf.save(`NLT_${pageTitle.replace(/\s+/g, '_')}_${today}.pdf`);
+                
+                downloadBtn.innerHTML = originalContent;
+                downloadBtn.disabled = false;
                 
             } catch (error) {
                 console.error('PDF generation error:', error);
