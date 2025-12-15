@@ -18,8 +18,8 @@
 
         <main class="main-content">
             <h2>Select Category</h2>
-            <nav class="category-grid">
-                <a href="./pages/impact-drivers/index.html" class="category-card">
+            <nav class="category-grid" id="categoryGrid">
+                <a href="./pages/brands/index.html?category=impact-drivers" class="category-card" data-page="1" data-category="impact-drivers">
                     <div class="category-image">
                         <img src="./assets/images/icons/impact-drive.png" alt="Cordless Impact Drivers">
                     </div>
@@ -27,7 +27,7 @@
                     <span class="count">8 Models</span>
                 </a>
 
-                <a href="./pages/impact-wrenches/index.html" class="category-card">
+                <a href="./pages/brands/index.html?category=impact-wrenches" class="category-card" data-page="1" data-category="impact-wrenches">
                     <div class="category-image">
                         <img src="./assets/images/icons/impact-wrench.png" alt="Cordless Impact Wrenches">
                     </div>
@@ -35,43 +35,104 @@
                     <span class="count">10 Models</span>
                 </a>
 
-                <a href="./pages/combi-drills/index.html" class="category-card">
+                <a href="./pages/brands/index.html?category=combi-drills" class="category-card" data-page="1" data-category="combi-drills">
                     <div class="category-image">
                         <img src="./assets/images/icons/combi-drill.png" alt="Cordless Combi Drills">
                     </div>
                     <h3>Cordless Combi Drills</h3>
-                    <span class="count">20 Models</span>
+                    <span class="count">19 Models</span>
                 </a>
 
-                <a href="./pages/screwguns/index.html" class="category-card">
-                    <div class="category-image">
-                        <img src="./assets/images/icons/screw-gun.png" alt="Cordless Screwguns & Screwdrivers">
-                    </div>
-                    <h3>Cordless Screwguns & Screwdrivers</h3>
-                    <span class="count">4 Models</span>
-                </a>
-
-                <a href="./pages/angle-drills/index.html" class="category-card">
-                    <div class="category-image">
-                        <img src="./assets/images/icons/angle-drill.png" alt="Cordless Angle Drills" class="no-flip">
-                    </div>
-                    <h3>Cordless Angle Drills</h3>
-                    <span class="count">1 Model</span>
-                </a>
-
-                <a href="./pages/sds-hammer-drills/index.html" class="category-card">
+                <a href="./pages/brands/index.html?category=sds-hammer-drills" class="category-card" data-page="1" data-category="sds-hammer-drills">
                     <div class="category-image">
                         <img src="./assets/images/icons/hammer-drill.png" alt="Cordless SDS Hammer Drills">
                     </div>
                     <h3>Cordless SDS Hammer Drills</h3>
-                    <span class="count">15 Models</span>
+                    <span class="count">9 Models</span>
+                </a>
+
+                <a href="./pages/brands/index.html?category=angle-grinders" class="category-card" data-page="2" data-category="angle-grinders">
+                    <div class="category-image">
+                        <img src="./assets/images/icons/angle-grinder.png" alt="Angle Grinders">
+                    </div>
+                    <h3>Angle Grinders</h3>
+                    <span class="count">Models</span>
+                </a>
+
+                <a href="./pages/brands/index.html?category=jig-saws" class="category-card" data-page="1" data-category="jig-saws">
+                    <div class="category-image">
+                        <img src="./assets/images/icons/jigsaw.png" alt="Jig Saws">
+                    </div>
+                    <h3>Jig Saws</h3>
+                    <span class="count">3 Models</span>
+                </a>
+
+                <a href="./pages/brands/index.html?category=reciprocating-saws" class="category-card" data-page="1" data-category="reciprocating-saws">
+                    <div class="category-image">
+                        <img src="./assets/images/icons/reciprocatingsaw.png" alt="Reciprocating Saws">
+                    </div>
+                    <h3>Reciprocating Saws</h3>
+                    <span class="count">5 Models</span>
+                </a>
+
+                <a href="./pages/brands/index.html?category=skil-saws" class="category-card" data-page="2" data-category="skil-saws">
+                    <div class="category-image">
+                        <img src="./assets/images/icons/circular-saw.png" alt="Circular Saws">
+                    </div>
+                    <h3>Circular Saws</h3>
+                    <span class="count">Models</span>
                 </a>
             </nav>
+            
+            <div class="pagination">
+                <button class="page-btn active" data-page="1">1</button>
+                <button class="page-btn" data-page="2">2</button>
+            </div>
         </main>
 
         <footer class="main-footer">
             <a href="https://newlocaltools.uk" class="back-link">← Back to Main Site</a>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryCards = document.querySelectorAll('.category-card');
+            const pageButtons = document.querySelectorAll('.page-btn');
+            
+            function showPage(pageNumber) {
+                // Hide all cards
+                categoryCards.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // Show cards for selected page
+                categoryCards.forEach(card => {
+                    if (card.getAttribute('data-page') === pageNumber.toString()) {
+                        card.style.display = 'flex';
+                    }
+                });
+                
+                // Update active button
+                pageButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-page') === pageNumber.toString()) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            // Add click handlers to page buttons
+            pageButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const pageNumber = parseInt(this.getAttribute('data-page'));
+                    showPage(pageNumber);
+                });
+            });
+            
+            // Show first page by default
+            showPage(1);
+        });
+    </script>
 </body>
 </html>

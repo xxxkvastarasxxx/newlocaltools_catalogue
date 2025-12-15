@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="../../assets/css/category.css">
 </head>
 <body>
@@ -15,7 +17,7 @@
             <a href="../../index.html" class="back-btn">← Back to Categories</a>
             <div class="page-title">
                 <h1>Cordless Combi Drills</h1>
-                <p>20 Models Available</p>
+                <p>19 Models Available</p>
             </div>
         </div>
     </header>
@@ -24,20 +26,356 @@
         <div class="container">
             <div class="comparison-header">
                 <h2>Combi Drills Comparison</h2>
-                <button class="btn-download" disabled>
+                <button class="btn-download" id="downloadPdf">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
-                    Coming Soon
+                    Download PDF
                 </button>
             </div>
 
-            <div style="background: white; border-radius: 12px; padding: 4rem 2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <p style="font-size: 1.2rem; color: #6c757d;">Comparison table will be added soon</p>
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD100N.png" alt="DCD100N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD85MN.png" alt="DCD85MN" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD999N.png" alt="DCD999N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD996N.png" alt="DCD996N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD991N.png" alt="DCD991N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD1007N.png" alt="DCD1007N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD805N.png" alt="DCD805N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD800N.png" alt="DCD800N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD799N.png" alt="DCD799N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD796N.png" alt="DCD796N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD795N.png" alt="DCD795N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD791N.png" alt="DCD791N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD790N.png" alt="DCD790N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD709N.png" alt="DCD709N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD708N.png" alt="DCD708N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD778N.png" alt="DCD778N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD777N.png" alt="DCD777N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD776N.png" alt="DCD776N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/combi-drills/DCD780N.png" alt="DCD780N" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>DCD100N</strong></td>
+                            <td><strong>DCD85MN</strong></td>
+                            <td><strong>DCD999N</strong></td>
+                            <td><strong>DCD996N</strong></td>
+                            <td><strong>DCD991N</strong></td>
+                            <td><strong>DCD1007N</strong></td>
+                            <td><strong>DCD805N</strong></td>
+                            <td><strong>DCD800N</strong></td>
+                            <td><strong>DCD799N</strong></td>
+                            <td><strong>DCD796N</strong></td>
+                            <td><strong>DCD795N</strong></td>
+                            <td><strong>DCD791N</strong></td>
+                            <td><strong>DCD790N</strong></td>
+                            <td><strong>DCD709N</strong></td>
+                            <td><strong>DCD708N</strong></td>
+                            <td><strong>DCD778N</strong></td>
+                            <td><strong>DCD777N</strong></td>
+                            <td><strong>DCD776N</strong></td>
+                            <td><strong>DCD780N</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Limited edition 100 year drill</td>
+                            <td>Limited edition McLaren drill</td>
+                            <td>Ultra compact, lightweight design drill</td>
+                            <td>Ultra compact, lightweight design drill</td>
+                            <td>Ultra compact, lightweight design drill</td>
+                            <td>Most powerful for toughest jobsites drill</td>
+                            <td>Latest and most powerful 2 speed drill</td>
+                            <td>Compact design drill</td>
+                            <td>Compact design drill</td>
+                            <td>Lightweight and compact drill</td>
+                            <td>Lightweight and compact drill</td>
+                            <td>Lightweight and compact drill</td>
+                            <td>Part of the intelligent XR Lithium Ion Series drill</td>
+                            <td>Compact design drill</td>
+                            <td>Powerful yet compact drill</td>
+                            <td>High performance compact drill</td>
+                            <td>Compact, lightweight design drill</td>
+                            <td>Compact brushed drill</td>
+                            <td>Lightweight brushed drill</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushed</td>
+                            <td>Brushed</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                            <td>2 modes</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Torque (Nm)</td>
+                            <td>68</td>
+                            <td>90</td>
+                            <td>126</td>
+                            <td>95</td>
+                            <td>95</td>
+                            <td>169</td>
+                            <td>90</td>
+                            <td>90</td>
+                            <td>74</td>
+                            <td>Not specified</td>
+                            <td>Not specified</td>
+                            <td>70</td>
+                            <td>Not specified</td>
+                            <td>65</td>
+                            <td>0-7650/25500</td>
+                            <td>65</td>
+                            <td>65</td>
+                            <td>42</td>
+                            <td>Not specified</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Revolutions Per Minute (RPM)</td>
+                            <td>0-450/1650</td>
+                            <td>0-650/2000</td>
+                            <td>0-500/1500/2250</td>
+                            <td>0-500/1500/2250</td>
+                            <td>0-450/1300/2000</td>
+                            <td>0-500/1300/2250</td>
+                            <td>0-650/2000</td>
+                            <td>0-650/2000</td>
+                            <td>0-450/1650</td>
+                            <td>0-550/2000</td>
+                            <td>0-600/2000</td>
+                            <td>0-550/2000</td>
+                            <td>0-600/2000</td>
+                            <td>0-450/1650</td>
+                            <td>0-450/1650</td>
+                            <td>0-500/1750</td>
+                            <td>0-500/1750</td>
+                            <td>0-450/1500</td>
+                            <td>0-600/2000</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Beats per Minute (BPM)</td>
+                            <td>0-7650/28050</td>
+                            <td>0-11050/34001</td>
+                            <td>0-8500/25500/38250</td>
+                            <td>0-8600/25500/38250</td>
+                            <td>Not specified</td>
+                            <td>0-8500/22100/38250</td>
+                            <td>0-11050/34000</td>
+                            <td>Not specified</td>
+                            <td>0-7650/28050</td>
+                            <td>0-9350/34000</td>
+                            <td>0-10200/34000</td>
+                            <td>Not specified</td>
+                            <td>Not specified</td>
+                            <td>0-7650/28050</td>
+                            <td>Not specified</td>
+                            <td>0-8500/29750</td>
+                            <td>Not specified</td>
+                            <td>0-7650/25500</td>
+                            <td>Not specified</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max. Drilling Capacity - Metal (mm)</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td>25.4</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>Not specified</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>Not specified</td>
+                            <td>13</td>
+                            <td>Not specified</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max. Drilling Capacity - Wood (mm)</td>
+                            <td>30</td>
+                            <td>55</td>
+                            <td>55</td>
+                            <td>55</td>
+                            <td>55</td>
+                            <td>66</td>
+                            <td>55</td>
+                            <td>55</td>
+                            <td>30</td>
+                            <td>40</td>
+                            <td>38</td>
+                            <td>40</td>
+                            <td>38</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>38</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>164</td>
+                            <td>164</td>
+                            <td>213</td>
+                            <td>213</td>
+                            <td>199</td>
+                            <td>193</td>
+                            <td>177</td>
+                            <td>161</td>
+                            <td>164</td>
+                            <td>173</td>
+                            <td>197</td>
+                            <td>175</td>
+                            <td>181</td>
+                            <td>175</td>
+                            <td>160</td>
+                            <td>203</td>
+                            <td>192</td>
+                            <td>228</td>
+                            <td>190</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>1.09</td>
+                            <td>1.09</td>
+                            <td>1.7</td>
+                            <td>1.7</td>
+                            <td>1.7</td>
+                            <td>1.85</td>
+                            <td>1.34</td>
+                            <td>1.28</td>
+                            <td>1.09</td>
+                            <td>1.3</td>
+                            <td>1.3</td>
+                            <td>1.3</td>
+                            <td>1.2</td>
+                            <td>1.2</td>
+                            <td>1.1</td>
+                            <td>1.2</td>
+                            <td>1.15</td>
+                            <td>1.34</td>
+                            <td>1.2</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">LED Light</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Combi Drill Specifications</h3>
+                <div class="explanation-item">
+                    <h4>RPM (Revolutions Per Minute)</h4>
+                    <p>RPM indicates the rotational speed of the drill chuck. Variable speed control allows lower speeds for accurate, controlled drilling and higher speeds for fast, efficient drilling in softer materials such as timber.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>BPM (Beats Per Minute)</h4>
+                    <p>BPM refers to the number of hammer impacts delivered per minute when operating in percussion mode. Higher BPM values improve drilling performance in masonry and other dense substrates.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>Torque (Nm)</h4>
+                    <p>Torque measures the rotational force produced by the motor. Higher torque enables the drill to drive fasteners efficiently and maintain performance under load, particularly when working with hardwoods or larger screws.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>Maximum Drilling Capacity – Metal</h4>
+                    <p>This specification defines the maximum diameter the drill can achieve in metal using a suitable twist drill bit. Adhering to this limit ensures optimal performance when drilling materials such as steel or aluminium and helps prevent motor overload and premature bit wear.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>Maximum Drilling Capacity – Wood</h4>
+                    <p>The wood drilling capacity specifies the largest bit diameter the tool can drive through softwood or hardwood without excessive strain. Models with higher capacities are better suited for carpentry tasks involving large spade bits, auger bits, or hole saws.</p>
+                </div>
             </div>
         </div>
     </main>
+    <script src="../../assets/js/category.js"></script>
 </body>
 </html>

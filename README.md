@@ -14,6 +14,7 @@ NLT_Catalogue/
 │   │   └── styles.css                  # Legacy styles (archived)
 │   ├── js/
 │   │   ├── category.js                 # PDF generation and interactions
+│   │   ├── brands.js                   # Brand selector behaviour (dynamic links)
 │   │   └── script.js                   # Legacy script (archived)
 │   └── images/                         # Local images (if needed)
 ├── pages/
@@ -29,6 +30,8 @@ NLT_Catalogue/
 │   │   └── index.html                  # Angle drills (coming soon)
 │   └── sds-hammer-drills/
 │       └── index.html                  # SDS hammer drills (coming soon)
+│   ├── brands/
+│   │   └── index.html                  # Brand selector page (dynamic)
 └── README.md                           # This file
 ```
 
@@ -48,6 +51,22 @@ NLT_Catalogue/
 2. Select a category from the navigation page
 3. View comparison tables for each category
 4. Download tables as PDF (where available)
+
+## Category → Brand Flow
+
+- The main `index.html` category cards now link to the brand selector: `pages/brands/index.html?category={slug}`.
+- The brand selector page (`pages/brands/index.html`) reads the `category` URL parameter and updates the header/title accordingly.
+- Clicking a brand currently opens the selected category's main page (for example `pages/impact-wrenches/index.html`). In future you can create brand-specific subpages like `pages/combi-drills/dewalt/index.html` and update `assets/js/brands.js` to point to those.
+
+Files added/updated for this feature:
+- `pages/brands/index.html` — dynamic brand selector page
+- `assets/js/brands.js` — script which reads `?category=` and updates links/title
+- `assets/css/main.css` — new brand-specific hover classes (`brand-dewalt`, `brand-makita`, `brand-milwaukee`)
+
+Brand hover colours (CSS classes):
+- `brand-dewalt`: Yellow — `#ffd400`
+- `brand-makita`: Teal — `rgb(0, 140, 149)`
+- `brand-milwaukee`: Red — `rgb(219, 1, 28)`
 
 ## Categories
 

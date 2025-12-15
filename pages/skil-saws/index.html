@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Saws - New Local Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../../assets/css/category.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a href="../../index.html" class="back-btn">← Back to Categories</a>
+            <div class="page-title">
+                <h1>Circular Saws</h1>
+                <p>Models Available</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Circular Saws Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL1.png" alt="MODEL1" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL2.png" alt="MODEL2" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL3.png" alt="MODEL3" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL4.png" alt="MODEL4" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL5.png" alt="MODEL5" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL6.png" alt="MODEL6" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL7.png" alt="MODEL7" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL8.png" alt="MODEL8" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL9.png" alt="MODEL9" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/circular-saws/MODEL10.png" alt="MODEL10" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>MODEL1</strong></td>
+                            <td><strong>MODEL2</strong></td>
+                            <td><strong>MODEL3</strong></td>
+                            <td><strong>MODEL4</strong></td>
+                            <td><strong>MODEL5</strong></td>
+                            <td><strong>MODEL6</strong></td>
+                            <td><strong>MODEL7</strong></td>
+                            <td><strong>MODEL8</strong></td>
+                            <td><strong>MODEL9</strong></td>
+                            <td><strong>MODEL10</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Blade Diameter (mm)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Depth @ 90° (mm)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Depth @ 45° (mm)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">No Load Speed (RPM)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">LED Light</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Circular Saw Specifications</h3>
+                
+                <div class="explanation-item">
+                    <h4>Blade Diameter</h4>
+                    <p>The blade diameter determines the maximum cutting depth. Common sizes include 165mm, 184mm, and 190mm, with larger blades providing greater cutting capacity for thicker materials.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Cutting Depth</h4>
+                    <p>Maximum cutting depth specifications at 90° and 45° indicate how thick a material the saw can cut through at different angles. This is crucial for determining suitability for framing, decking, and other construction applications.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>No Load Speed (RPM)</h4>
+                    <p>The blade rotation speed when not under load. Higher RPM values generally provide cleaner, faster cuts through various materials, though optimal speed depends on the blade type and material being cut.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/js/category.js"></script>
+</body>
+</html>

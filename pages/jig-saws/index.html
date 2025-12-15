@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jig Saws - New Local Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../../assets/css/category.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a href="../../index.html" class="back-btn">← Back to Categories</a>
+            <div class="page-title">
+                <h1>Jig Saws</h1>
+                <p>3 Models Available</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Jig Saws Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/jigsaws/DCS335N.png" alt="DCS335N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/jigsaws/DCS334N.png" alt="DCS334N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/jigsaws/DCS331N.png" alt="DCS331N" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>DCS335N</strong></td>
+                            <td><strong>DCS334N</strong></td>
+                            <td><strong>DCS331N</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Enhanced efficiency and durability</td>
+                            <td>Patented anti-vibration counter-balance mechanism</td>
+                            <td>Increased runtime and performance</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushless</td>
+                            <td>Brushed</td>
+                            <td>Brushless</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Capacity - Wood (mm)</td>
+                            <td>135</td>
+                            <td>135</td>
+                            <td>135</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Capacity - Steel (mm)</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Capacity - Aluminium (mm)</td>
+                            <td>25</td>
+                            <td>25</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Vibration Emission Value (m/s²)</td>
+                            <td>7.7</td>
+                            <td>5.2</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Stroke Length (mm)</td>
+                            <td>26</td>
+                            <td>26</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>185</td>
+                            <td>268</td>
+                            <td>305</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>2</td>
+                            <td>2.1</td>
+                            <td>2.3</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Dust Extraction</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Jig Saw Specifications</h3>
+                
+                <div class="explanation-item">
+                    <h4>Max Cutting Capacity – Wood (mm)</h4>
+                    <p>This specifies the thickest piece of wood the tool can cut effectively in a single pass. Staying within this limit ensures smooth cuts, prevents excessive wear on the blade, and reduces strain on the motor, helping maintain consistent performance.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Max Cutting Capacity – Steel (mm)</h4>
+                    <p>This indicates the maximum thickness of steel the tool can cut safely. Operating within this range prevents blade damage, reduces motor overload, and ensures accurate cuts in tougher metal materials.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Max Cutting Capacity – Aluminium (mm)</h4>
+                    <p>This shows the largest aluminium section the saw can cut efficiently. Following this limit helps avoid material deformation, ensures clean edges, and extends both blade and tool lifespan.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Vibration Emission Value (m/s²)</h4>
+                    <p>This value measures the vibration transmitted to the operator’s hands during cutting. Lower vibration improves comfort, reduces fatigue during extended use, and provides better control for precise and safe cutting operations.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>Stroke Length (mm)</h4>
+                    <p>Represents the distance the saw blade travels in one complete stroke. Longer strokes allow faster and more aggressive cutting, while shorter strokes provide better control for precise work.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../assets/js/category.js"></script>
+</body>
+</html>

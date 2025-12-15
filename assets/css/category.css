@@ -183,6 +183,8 @@ body {
     text-align: center;
     border: 1px solid #ddd;
     vertical-align: middle;
+    max-width: 200px;
+    width: 200px;
 }
 
 .spec-label {
@@ -191,6 +193,8 @@ body {
     text-align: left !important;
     padding-left: 1rem !important;
     color: #333;
+    min-width: 200px;
+    width: 200px;
 }
 
 .image-cell {

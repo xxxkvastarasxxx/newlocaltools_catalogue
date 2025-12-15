@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="../../assets/css/category.css">
 </head>
 <body>
@@ -15,7 +17,7 @@
             <a href="../../index.html" class="back-btn">← Back to Categories</a>
             <div class="page-title">
                 <h1>Cordless SDS Hammer Drills</h1>
-                <p>15 Models Available</p>
+                <p>9 Models Available</p>
             </div>
         </div>
     </header>
@@ -24,20 +26,217 @@
         <div class="container">
             <div class="comparison-header">
                 <h2>SDS Hammer Drills Comparison</h2>
-                <button class="btn-download" disabled>
+                <button class="btn-download" id="downloadPdf">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
-                    Coming Soon
+                    Download PDF
                 </button>
             </div>
 
-            <div style="background: white; border-radius: 12px; padding: 4rem 2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <p style="font-size: 1.2rem; color: #6c757d;">Comparison table will be added soon</p>
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH283N.png" alt="DCH283N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH275P2.png" alt="DCH275P2" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH274N.png" alt="DCH274N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH273N.png" alt="DCH273N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH263N.png" alt="DCH263N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH253N.png" alt="DCH253N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH172N.png" alt="DCH172N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH133N.png" alt="DCH133N" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../assets/images/products/sds-hammer-drills/DCH033N.png" alt="DCH033N" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>DCH283N</strong></td>
+                            <td><strong>DCH275P2</strong></td>
+                            <td><strong>DCH274N</strong></td>
+                            <td><strong>DCH273N</strong></td>
+                            <td><strong>DCH263N</strong></td>
+                            <td><strong>DCH253N</strong></td>
+                            <td><strong>DCH172N</strong></td>
+                            <td><strong>DCH133N</strong></td>
+                            <td><strong>DCH033N</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Compact, lightweight and ergonomic</td>
+                            <td>Compact, lightweight and ergonomic</td>
+                            <td>Ergonomic design</td>
+                            <td>Improved comfort</td>
+                            <td>Powerful, fast drilling</td>
+                            <td>Ideal for drilling fixing holes in heavy duty materials</td>
+                            <td>Lightweight ultra compact</td>
+                            <td>lightweight and ergonomic</td>
+                            <td>Compact and ergonomic</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushed</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                            <td>2 modes</td>
+                            <td>3 modes</td>
+                            <td>3 modes</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Revolutions Per Minute (RPM)</td>
+                            <td>0-980</td>
+                            <td>0-1100</td>
+                            <td>0-1100</td>
+                            <td>0-1100</td>
+                            <td>0-1165</td>
+                            <td>0-1200</td>
+                            <td>0-1060</td>
+                            <td>0-1500</td>
+                            <td>0-1500</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Drilling Capacity - Metal (mm)</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>10</td>
+                            <td>13</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Vibration Measurement - Chiseling (m/s²)</td>
+                            <td>8.5</td>
+                            <td>5.4</td>
+                            <td>5.4</td>
+                            <td>5.4</td>
+                            <td>7.7</td>
+                            <td>5.4</td>
+                            <td>Not applicable</td>
+                            <td>14.7</td>
+                            <td>14.7</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Vibration Measurement - Drilling (m/s²)</td>
+                            <td>8.5</td>
+                            <td>6.6</td>
+                            <td>6.6</td>
+                            <td>6.6</td>
+                            <td>9.1</td>
+                            <td>6.6</td>
+                            <td>8.8</td>
+                            <td>16.9</td>
+                            <td>16.9</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>364</td>
+                            <td>448</td>
+                            <td>328</td>
+                            <td>301</td>
+                            <td>404</td>
+                            <td>301</td>
+                            <td>265</td>
+                            <td>383</td>
+                            <td>383</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>3.6</td>
+                            <td>4.1</td>
+                            <td>2.7</td>
+                            <td>2.5</td>
+                            <td>2.7</td>
+                            <td>2.5</td>
+                            <td>1.8</td>
+                            <td>2.3</td>
+                            <td>2.3</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Perform & Protect</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">LED Light</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding SDS Hammer Drill Specifications</h3>
+                
+                <div class="explanation-item">
+                    <h4>Max Drilling Capacity – Metal (mm)</h4>
+                    <p>This specification indicates the largest diameter of metal the tool can effectively drill using a recommended twist drill bit. Staying within this limit ensures the motor runs efficiently, prevents stalling, and extends bit life, making it easier to match the tool to your project’s material requirements.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Vibration Measurement – Chiseling (m/s²)</h4>
+                    <p>This value reflects the level of vibration transmitted to the user’s hands during chiseling operations. Lower vibration levels reduce operator fatigue and increase comfort, allowing for safer, longer periods of work, especially when breaking or shaping masonry and other dense materials.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Vibration Measurement – Drilling (m/s²)</h4>
+                    <p>Similar to chiseling, this figure measures the hand-arm vibration experienced during hammer or standard drilling into materials like concrete or masonry. Tools with lower vibration ratings provide better control, accuracy, and reduce the risk of long-term strain injuries.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Revolutions Per Minute (RPM)</h4>
+                    <p>RPM represents the speed at which the drill chuck or tool spindle rotates. Higher RPM values allow faster cutting in softer materials, while variable speed control enables precision drilling and cleaner holes in tougher materials, giving the operator flexibility to adapt to different applications.</p>
+                </div>
             </div>
         </div>
     </main>
+
+    <script src="../../assets/js/category.js"></script>
 </body>
 </html>
