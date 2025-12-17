@@ -26,12 +26,37 @@ if (category) {
     const makitaLink = document.getElementById('makitaLink');
     const milwaukeeLink = document.getElementById('milwaukeeLink');
 
-    // Set DeWalt link to the category index page
-    dewaltLink.href = `../${category}/index.html`;
+    const updateBrandLink = (linkEl, href, statusText) => {
+        if (!linkEl) {
+            return;
+        }
 
-    // Future: These will be enabled when brand pages are created
-    // makitaLink.href = `../${category}/index.html`;
-    // milwaukeeLink.href = `../${category}/index.html`;
+        if (href) {
+            linkEl.href = href;
+            const countEl = linkEl.querySelector('.count');
+            if (countEl) {
+                countEl.textContent = statusText ?? 'Accessible';
+            }
+            linkEl.classList.remove('brand-unavailable');
+        } else {
+            linkEl.href = '#';
+            const countEl = linkEl.querySelector('.count');
+            if (countEl) {
+                countEl.textContent = statusText ?? 'Coming Soon';
+            }
+            linkEl.classList.add('brand-unavailable');
+        }
+    };
+
+    updateBrandLink(dewaltLink, `../DeWalt/${category}/index.html`, 'Accessible');
+
+    const makitaAvailableCategories = ['impact-drivers'];
+    const makitaHref = makitaAvailableCategories.includes(category)
+        ? `../Makita/${category}/index.html`
+        : null;
+    updateBrandLink(makitaLink, makitaHref);
+
+    updateBrandLink(milwaukeeLink, null);
 } else {
     // If no category is selected, redirect back to main page
     window.location.href = '../../index.html';
