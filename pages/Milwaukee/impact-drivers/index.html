@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordless Impact Drivers - New Local Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/css/category.css">
+    <link rel="icon" href="../../../assets/images/icons/NLT.logo.png" type="image/png">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a href="../../../index.html" class="back-btn">&larr; Back to Categories</a>
+            <div class="page-title">
+                <h1>Cordless Impact Drivers</h1>
+                <p>5 Models Available</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Impact Drivers Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/impact-drivers/M18_BLIDRC.png" alt="M18 BLIDRC" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/impact-drivers/M18_FID3.png" alt="M18 FID3" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/impact-drivers/M18_FQID.png" alt="M18 FQID" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/impact-drivers/M18_ONEID2.png" alt="M18 ONEID2" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/impact-drivers/M18_ONEID3.png" alt="M18 ONEID3" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>M18 BLIDRC</strong></td>
+                            <td><strong>M18 FID3</strong></td>
+                            <td><strong>M18 FQID</strong></td>
+                            <td><strong>M18 ONEID2</strong></td>
+                            <td><strong>M18 ONEID3</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Compact brushless driver</td>
+                            <td>Gen4 4-mode flagship</td>
+                            <td>SURGE hydraulic, low noise</td>
+                            <td>ONE-KEY smart control</td>
+                            <td>ONE-KEY gen4 performance</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Modes</td>
+                            <td>Single speed</td>
+                            <td>4 modes</td>
+                            <td>4 modes</td>
+                            <td>4 modes (ONE-KEY)</td>
+                            <td>4 modes (ONE-KEY)</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Torque (Nm)</td>
+                            <td>180</td>
+                            <td>226</td>
+                            <td>50</td>
+                            <td>203</td>
+                            <td>226</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Revolutions Per Minute (RPM)</td>
+                            <td>0-3400</td>
+                            <td>0-1900/2800/3900/3900</td>
+                            <td>0-900/2100/3000/3000</td>
+                            <td>0-1900/2800/3600/3600</td>
+                            <td>0-1900/2800/3900/3900</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Impacts Per Minute (IPM)</td>
+                            <td>0-4200</td>
+                            <td>0-1200/3400/4400/4400</td>
+                            <td>0-900/2100/4000/4000</td>
+                            <td>0-1200/3400/4300/4300</td>
+                            <td>0-1200/3400/4400/4400</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>130</td>
+                            <td>113</td>
+                            <td>150</td>
+                            <td>117</td>
+                            <td>113</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>1.1</td>
+                            <td>1.2</td>
+                            <td>1.5</td>
+                            <td>1.2</td>
+                            <td>1.2</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">LED Light</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Impact Driver Specifications</h3>
+                
+                <div class="explanation-item">
+                    <h4>RPM (Revolutions Per Minute)</h4>
+                    <p>RPM indicates the rotational speed of the drill chuck. Variable speed control allows lower speeds for accurate, controlled drilling and higher speeds for fast, efficient drilling in softer materials such as timber.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>IPM (Impacts Per Minute)</h4>
+                    <p>Indicates the number of concussive blows the tool delivers per minute. Higher IPM provides more driving power for tougher applications like driving long screws into hardwood or fastening through dense materials.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Torque (Nm)</h4>
+                    <p>Torque measures the rotational force produced by the motor. Higher torque enables the drill to drive fasteners efficiently and maintain performance under load, particularly when working with hardwoods or larger screws.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../../assets/js/category.js"></script>
+</body>
+</html>

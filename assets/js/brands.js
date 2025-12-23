@@ -61,7 +61,11 @@ if (category) {
     })();
     updateBrandLink(makitaLink, makitaHref);
 
-    updateBrandLink(milwaukeeLink, null);
+    const milwaukeeAvailableCategories = ['impact-drivers', 'combi-drills'];
+    const milwaukeeHref = milwaukeeAvailableCategories.includes(category)
+        ? `../Milwaukee/${category}/index.html`
+        : null;
+    updateBrandLink(milwaukeeLink, milwaukeeHref);
 } else {
     // If no category is selected, redirect back to main page
     window.location.href = '../../index.html';

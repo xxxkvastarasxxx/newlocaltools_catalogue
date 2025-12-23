@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordless Combi Drills - New Local Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/css/category.css">
+    <link rel="icon" href="../../../assets/images/icons/NLT.logo.png" type="image/png">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a href="../../../index.html" class="back-btn">&larr; Back to Categories</a>
+            <div class="page-title">
+                <h1>Cordless Combi Drills</h1>
+                <p>5 Models Available</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Combi Drills Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/combi-drills/M18_BLPD2.png" alt="M18 BLPD2" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/combi-drills/M18_BPD-402C.png" alt="M18 BPD-402C" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/combi-drills/M18_FPD3.png" alt="M18 FPD3" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/combi-drills/M18_FPD3.png" alt="M18 FPD2" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Milwaukee/combi-drills/M18_ONEPD3.png" alt="M18 ONEPD3" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>M18 BLPD2</strong></td>
+                            <td><strong>M18 BPD-402C</strong></td>
+                            <td><strong>M18 FPD3</strong></td>
+                            <td><strong>M18 FPD2</strong></td>
+                            <td><strong>M18 ONEPD3</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Compact brushless percussion drill</td>
+                            <td>Brushed kit, reliable all-rounder</td>
+                            <td>Gen4 Fuel hammer drill</td>
+                            <td>Gen3 Fuel hammer drill</td>
+                            <td>One-Key Fuel hammer drill</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushless</td>
+                            <td>Brushed</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Modes</td>
+                            <td>2-speed, drill/hammer</td>
+                            <td>2-speed, drill/hammer</td>
+                            <td>2-speed, drill/hammer</td>
+                            <td>2-speed, drill/hammer</td>
+                            <td>2-speed, drill/hammer (One-Key)</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Torque (Nm)</td>
+                            <td>82</td>
+                            <td>60</td>
+                            <td>158</td>
+                            <td>135</td>
+                            <td>158</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Revolutions Per Minute (RPM)</td>
+                            <td>0-550 / 0-1800</td>
+                            <td>0-450 / 0-1800</td>
+                            <td>0-500 / 0-2100</td>
+                            <td>0-550 / 0-2000</td>
+                            <td>0-500 / 0-2100</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Beats per Minute (BPM)</td>
+                            <td>0-8250 / 0-27000</td>
+                            <td>0-7200 / 0-28800</td>
+                            <td>0-0 / 0-33000</td>
+                            <td>0-8850 / 0-32000</td>
+                            <td>0-0 / 0-33000</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max. Drilling Capacity - Metal (mm)</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>16</td>
+                            <td>16</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max. Drilling Capacity - Wood (mm)</td>
+                            <td>38</td>
+                            <td>38</td>
+                            <td>89</td>
+                            <td>65</td>
+                            <td>89</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>180</td>
+                            <td>198</td>
+                            <td>175</td>
+                            <td>197</td>
+                            <td>175</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>1.5</td>
+                            <td>1.9</td>
+                            <td>1.5</td>
+                            <td>1.45</td>
+                            <td>1.5</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">LED Light</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Combi Drill Specifications</h3>
+                <div class="explanation-item">
+                    <h4>RPM (Revolutions Per Minute)</h4>
+                    <p>RPM indicates the rotational speed of the drill chuck. Variable speed control allows lower speeds for accurate, controlled drilling and higher speeds for fast, efficient drilling in softer materials such as timber.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>BPM (Beats Per Minute)</h4>
+                    <p>BPM refers to the number of hammer impacts delivered per minute when operating in percussion mode. Higher BPM values improve drilling performance in masonry and other dense substrates.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>Torque (Nm)</h4>
+                    <p>Torque measures the rotational force produced by the motor. Higher torque enables the drill to drive fasteners efficiently and maintain performance under load, particularly when working with hardwoods or larger screws.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>Maximum Drilling Capacity Metal</h4>
+                    <p>This specification defines the maximum diameter the drill can achieve in metal using a suitable twist drill bit. Adhering to this limit ensures optimal performance when drilling materials such as steel or aluminium and helps prevent motor overload and premature bit wear.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>Maximum Drilling Capacity Wood</h4>
+                    <p>The wood drilling capacity specifies the largest bit diameter the tool can drive through softwood or hardwood without excessive strain. Models with higher capacities are better suited for carpentry tasks involving large spade bits, auger bits, or hole saws.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../../../assets/js/category.js"></script>
+</body>
+</html>
