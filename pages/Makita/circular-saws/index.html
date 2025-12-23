@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Saws - New Local Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/css/category.css">
+    <link rel="icon" href="../../../assets/images/icons/NLT.logo.png" type="image/png">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a href="../../../index.html" class="back-btn">&larr; Back to Categories</a>
+            <div class="page-title">
+                <h1>Circular Saws</h1>
+                <p>6 Models Available</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Circular Saws Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/circular-saws/DHS660.png" alt="DHS660" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/circular-saws/DHS661.png" alt="DHS661" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/circular-saws/DHS680.png" alt="DHS680" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/circular-saws/DSS501.png" alt="DSS501" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/circular-saws/DSS610.png" alt="DSS610" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/circular-saws/DSS611.png" alt="DSS611" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>DHS660</strong></td>
+                            <td><strong>DHS661</strong></td>
+                            <td><strong>DHS680</strong></td>
+                            <td><strong>DSS501</strong></td>
+                            <td><strong>DSS610</strong></td>
+                            <td><strong>DSS611</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Brushless 165mm with brake</td>
+                            <td>Brushless 165mm with AWS</td>
+                            <td>Brushless 165mm pro saw</td>
+                            <td>Compact 136mm lightweight</td>
+                            <td>165mm pro saw with LED</td>
+                            <td>165mm high-speed, soft grip</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushed</td>
+                            <td>Brushed</td>
+                            <td>Brushed</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Blade Diameter (mm)</td>
+                            <td>165</td>
+                            <td>165</td>
+                            <td>165</td>
+                            <td>136</td>
+                            <td>165</td>
+                            <td>165</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Blade Bore (mm)</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20/30</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Depth at 90° (mm)</td>
+                            <td>57</td>
+                            <td>57</td>
+                            <td>57</td>
+                            <td>51</td>
+                            <td>57</td>
+                            <td>57</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Depth at 45° (mm)</td>
+                            <td>41</td>
+                            <td>41</td>
+                            <td>41</td>
+                            <td>35</td>
+                            <td>40</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Revolutions Per Minute (RPM)</td>
+                            <td>5000</td>
+                            <td>5000</td>
+                            <td>5000</td>
+                            <td>3600</td>
+                            <td>3700</td>
+                            <td>3700</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (Mm)</td>
+                            <td>270</td>
+                            <td>270</td>
+                            <td>350</td>
+                            <td>364</td>
+                            <td>347</td>
+                            <td>347</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (Kg)</td>
+                            <td>2.9-3.2</td>
+                            <td>2.9-3.2</td>
+                            <td>3.0-3.3</td>
+                            <td>2.4-2.7</td>
+                            <td>3.0-3.4</td>
+                            <td>2.9-3.2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Circular Saw Specifications</h3>
+                
+                <div class="explanation-item">
+                    <h4>Blade Diameter (mm)</h4>
+                    <p>Blade diameter refers to the overall size of the blade the tool is designed to use. Larger diameters allow deeper cuts and greater cutting capacity, making them better for thick stock and heavy-duty work. Smaller diameters enable more compact, lightweight tool designs that are easier to control and better suited for precision work or confined spaces. Choose the blade size that balances cutting needs with portability and handling. Always use the manufacturer-specified blade diameter to ensure the blade clears guards and housings, maintains proper speed and torque, and meets safety and performance requirements.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Blade Bore (mm)</h4>
+                    <p>The blade bore is the diameter of the central hole in the blade that fits onto the toolâ€™s spindle. It must match the spindle size or be properly adapted to ensure a secure fit.</p>
+                    <p>Using the correct bore (or the proper reducer/adapter supplied by the manufacturer) is essential to maintain blade stability, minimize vibration, and prevent slippage during cutting. An incorrect bore can cause runout, excessive wear, or unsafe operation.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Max Cutting Depth at 90Â° (mm)</h4>
+                    <p>This specification indicates the deepest cut the tool can make when the blade is perpendicular to the material (a straight 90Â° cut). It represents the maximum single-pass cutting capability and is crucial for tasks requiring full-thickness cuts. When selecting a saw for through-cuts, trimming, or plunge operations, ensure the 90Â° depth meets the material thickness you need to cut without multiple passes or special setups.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Max Cutting Depth at 45Â° (mm)</h4>
+                    <p>Max cutting depth at 45Â° is the deepest achievable cut with the blade tilted to 45 degrees. Tilting the blade reduces its effective depth, so this value is typically less than the 90Â° depth. This spec is important for bevel cuts, miters, and angled work where consistent depth and clean bevels are required. Plan cuts and choose blade size accordingly if frequent angled cuts are part of your workflow.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>RPM (Revolutions Per Minute)</h4>
+                    <p>RPM indicates the rotational speed of the drill chuck. Variable speed control allows lower speeds for accurate, controlled drilling and higher speeds for fast, efficient drilling in softer materials such as timber.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../../assets/js/category.js"></script>
+</body>
+</html>

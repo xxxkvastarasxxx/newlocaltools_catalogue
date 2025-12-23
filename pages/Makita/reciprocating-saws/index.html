@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciprocating Saws - New Local Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/css/category.css">
+    <link rel="icon" href="../../../assets/images/icons/NLT.logo.png" type="image/png">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a href="../../../index.html" class="back-btn">&larr; Back to Categories</a>
+            <div class="page-title">
+                <h1>Reciprocating Saws</h1>
+                <p>7 Models Available</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Reciprocating Saws Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/reciprocating-saws/DJR183.png" alt="DJR183" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/reciprocating-saws/DJR185.png" alt="DJR185" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/reciprocating-saws/DJR186.png" alt="DJR186" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/reciprocating-saws/DJR187.png" alt="DJR187" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/reciprocating-saws/DJR188.png" alt="DJR188" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/reciprocating-saws/DJR189.png" alt="DJR189" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/reciprocating-saws/DJR360.png" alt="DJR360" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>DJR183</strong></td>
+                            <td><strong>DJR185</strong></td>
+                            <td><strong>DJR186</strong></td>
+                            <td><strong>DJR187</strong></td>
+                            <td><strong>DJR188</strong></td>
+                            <td><strong>DJR189</strong></td>
+                            <td><strong>DJR360</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>2 x 18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>Compact saw for light use and tight spaces</td>
+                            <td>Compact saw that also accepts jigsaw blades</td>
+                            <td>Efficient basic reciprocating saw</td>
+                            <td>Brushless two-speed saw for pro use</td>
+                            <td>Compact brushless saw with short frame</td>
+                            <td>Brushless one-handed saw with low vibration</td>
+                            <td>36V (2x18) brushless two-speed saw</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushed</td>
+                            <td>Brushed</td>
+                            <td>Brushed</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Capacity - Wood (mm)</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>255</td>
+                            <td>255</td>
+                            <td>255</td>
+                            <td>255</td>
+                            <td>255</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Capacity - Steel Pipe (mm)</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>130</td>
+                            <td>130</td>
+                            <td>130</td>
+                            <td>130</td>
+                            <td>130</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Strokes per Minute (SPM)</td>
+                            <td>0-3000</td>
+                            <td>0-3000</td>
+                            <td>0-2800</td>
+                            <td>0-2300 / 3000</td>
+                            <td>0-3000</td>
+                            <td>0-3100</td>
+                            <td>0-2300 / 3000</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Stroke Length (mm)</td>
+                            <td>13</td>
+                            <td>13</td>
+                            <td>32</td>
+                            <td>32</td>
+                            <td>20</td>
+                            <td>22</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Vibration - Cutting Boards (m/s^2)</td>
+                            <td>8.0</td>
+                            <td>8.0</td>
+                            <td>13.0</td>
+                            <td>16.5</td>
+                            <td>15.5</td>
+                            <td>9.0</td>
+                            <td>16.5</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (mm)</td>
+                            <td>398</td>
+                            <td>398</td>
+                            <td>486</td>
+                            <td>439</td>
+                            <td>316</td>
+                            <td>410</td>
+                            <td>449</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight with Battery (kg)</td>
+                            <td>1.5 - 1.8</td>
+                            <td>1.5 - 1.8</td>
+                            <td>3.5 - 3.8</td>
+                            <td>3.4 - 3.8</td>
+                            <td>2.6 - 2.9</td>
+                            <td>2.2 - 2.5</td>
+                            <td>4.0 - 4.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Reciprocating Saw Specifications</h3>
+
+                <div class="explanation-item">
+                    <h4>Max Cutting Capacity - Wood (mm)</h4>
+                    <p>This is the deepest wood cut each saw can handle in one pass. Staying within this limit keeps cuts clean, protects the motor, and extends blade life.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Max Cutting Capacity - Steel Pipe (mm)</h4>
+                    <p>The largest pipe diameter the saw can cut efficiently. Matching the tool to the pipe size prevents binding, overheating, and premature blade wear.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Strokes per Minute (SPM)</h4>
+                    <p>SPM is the speed range of the reciprocating action. Higher speeds clear soft material quickly; lower speeds add control for metal or plunge cuts.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Vibration - Cutting Boards (m/s^2)</h4>
+                    <p>Lower vibration means better comfort and control during long cuts. Choose calmer tools for overhead or one-handed work to reduce fatigue.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../../assets/js/category.js"></script>
+</body>
+</html>

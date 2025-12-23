@@ -11,7 +11,8 @@ const categoryNames = {
     'angle-grinders': 'Angle Grinders',
     'jig-saws': 'Jig Saws',
     'reciprocating-saws': 'Reciprocating Saws',
-    'skil-saws': 'Circular Saws'
+    'skil-saws': 'Circular Saws',
+    'circular-saws': 'Circular Saws'
 };
 
 // Update page title with selected category
@@ -50,11 +51,12 @@ if (category) {
 
     updateBrandLink(dewaltLink, `../DeWalt/${category}/index.html`, 'Accessible');
 
-    const makitaAvailableCategories = ['impact-drivers', 'impact-wrenches', 'combi-drills', 'sds-hammer-drills', 'jig-saws'];
+    const makitaAvailableCategories = ['impact-drivers', 'impact-wrenches', 'combi-drills', 'sds-hammer-drills', 'jig-saws', 'reciprocating-saws', 'angle-grinders', 'skil-saws', 'circular-saws'];
     const makitaHref = (() => {
         if (!makitaAvailableCategories.includes(category)) return null;
         // Map SDS category to Makita's hammer-drills folder
         if (category === 'sds-hammer-drills') return '../Makita/hammer-drills/index.html';
+        if (category === 'skil-saws') return '../Makita/circular-saws/index.html';
         return `../Makita/${category}/index.html`;
     })();
     updateBrandLink(makitaLink, makitaHref);
