@@ -50,7 +50,7 @@ if (category) {
 
     updateBrandLink(dewaltLink, `../DeWalt/${category}/index.html`, 'Accessible');
 
-    const makitaAvailableCategories = ['impact-drivers', 'impact-wrenches'];
+    const makitaAvailableCategories = ['impact-drivers', 'impact-wrenches', 'combi-drills'];
     const makitaHref = makitaAvailableCategories.includes(category)
         ? `../Makita/${category}/index.html`
         : null;
