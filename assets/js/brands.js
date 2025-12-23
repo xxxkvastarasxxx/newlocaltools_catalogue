@@ -50,10 +50,13 @@ if (category) {
 
     updateBrandLink(dewaltLink, `../DeWalt/${category}/index.html`, 'Accessible');
 
-    const makitaAvailableCategories = ['impact-drivers', 'impact-wrenches', 'combi-drills'];
-    const makitaHref = makitaAvailableCategories.includes(category)
-        ? `../Makita/${category}/index.html`
-        : null;
+    const makitaAvailableCategories = ['impact-drivers', 'impact-wrenches', 'combi-drills', 'sds-hammer-drills', 'jig-saws'];
+    const makitaHref = (() => {
+        if (!makitaAvailableCategories.includes(category)) return null;
+        // Map SDS category to Makita's hammer-drills folder
+        if (category === 'sds-hammer-drills') return '../Makita/hammer-drills/index.html';
+        return `../Makita/${category}/index.html`;
+    })();
     updateBrandLink(makitaLink, makitaHref);
 
     updateBrandLink(milwaukeeLink, null);

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jig Saws - New Local Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/css/category.css">
+    <link rel="icon" href="../../../assets/images/icons/NLT.logo.png" type="image/png">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a href="../../../index.html" class="back-btn">&larr; Back to Categories</a>
+            <div class="page-title">
+                <h1>Jig Saws</h1>
+                <p>6 Models Available</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>Jig Saws Comparison</h2>
+                <button class="btn-download" id="downloadPdf">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+
+            <div class="table-wrapper" id="comparisonTable">
+                <table class="comparison-table">
+                    <tbody>
+                        <tr>
+                            <td class="spec-label logo-cell"><img src="../../../assets/images/icons/NLT.logo.png" alt="New Local Tools Logo" class="table-logo"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/jig-saws/DJV180.png" alt="DJV180" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/jig-saws/DJV181.png" alt="DJV181" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/jig-saws/DJV182.png" alt="DJV182" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/jig-saws/DJV184.png" alt="DJV184" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/jig-saws/DJV185.png" alt="DJV185" crossorigin="anonymous"></td>
+                            <td class="image-cell"><img src="../../../assets/images/products/Makita/jig-saws/DJV186.png" alt="DJV186" crossorigin="anonymous"></td>
+                        </tr>
+                        <tr class="model-row">
+                            <td class="spec-label">Model</td>
+                            <td><strong>DJV180</strong></td>
+                            <td><strong>DJV181</strong></td>
+                            <td><strong>DJV182</strong></td>
+                            <td><strong>DJV184</strong></td>
+                            <td><strong>DJV185</strong></td>
+                            <td><strong>DJV186</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Voltage (V)</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Description</td>
+                            <td>26 mm stroke, 0-2600 SPM, tool-less blade clamp</td>
+                            <td>Brushless, 26 mm stroke, 800-3500 SPM</td>
+                            <td>Brushless barrel, 26 mm stroke, 800-3500 SPM</td>
+                            <td>Compact brushless, 23 mm stroke, 0-3000 SPM</td>
+                            <td>Barrel brushless, 23 mm stroke, 800-3000 SPM</td>
+                            <td>Compact 18 mm stroke, 0-2900 SPM, lightweight</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Motor</td>
+                            <td>Brushed</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushless</td>
+                            <td>Brushed</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Strokes Per Minute (SPM)</td>
+                            <td>0-2600</td>
+                            <td>800-3500</td>
+                            <td>800-3500</td>
+                            <td>0-3000</td>
+                            <td>800-3000</td>
+                            <td>0-2900</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Stroke Length (mm)</td>
+                            <td>26</td>
+                            <td>26</td>
+                            <td>26</td>
+                            <td>23</td>
+                            <td>23</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Wood (mm)</td>
+                            <td>135</td>
+                            <td>135</td>
+                            <td>135</td>
+                            <td>135</td>
+                            <td>135</td>
+                            <td>65</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Steel (mm)</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Max Cutting Aluminium (mm)</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Length (mm)</td>
+                            <td>257</td>
+                            <td>298</td>
+                            <td>266</td>
+                            <td>259</td>
+                            <td>259</td>
+                            <td>257</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Weight (kg)</td>
+                            <td>2.7-3.0</td>
+                            <td>2.3-2.6</td>
+                            <td>2.4-2.7</td>
+                            <td>2.1-2.4</td>
+                            <td>2.0-2.3</td>
+                            <td>1.9-2.2</td>
+                        </tr>
+                        <tr>
+                            <td class="spec-label">Orbital Action</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="specs-explanation">
+                <h3>Understanding Jig Saw Specifications</h3>
+
+                <div class="explanation-item">
+                    <h4>Strokes Per Minute (SPM)</h4>
+                    <p>Higher SPM cuts faster in sheet goods; slow down for thicker stock or metals to keep blades cool and cuts clean.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Stroke Length (mm)</h4>
+                    <p>Longer strokes remove more material per pass for speed; shorter strokes give finer control and smoother finishes.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Material Capacities</h4>
+                    <p>The wood, steel, and aluminium capacities are the recommended maximum thicknesses. Staying within them protects blades, motors, and cut quality.</p>
+                </div>
+
+                <div class="explanation-item">
+                    <h4>Weight and Form Factor</h4>
+                    <p>Lighter barrel-grip bodies suit overhead or precise work; heavier top-handle saws offer stability on long, straight cuts.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../../assets/js/category.js"></script>
+</body>
+</html>
